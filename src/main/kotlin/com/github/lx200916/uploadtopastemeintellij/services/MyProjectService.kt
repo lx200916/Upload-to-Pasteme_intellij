@@ -1,7 +1,7 @@
-package org.jetbrains.plugins.template.services
+package com.github.lx200916.uploadtopastemeintellij.services
 
 import com.intellij.openapi.project.Project
-import org.jetbrains.plugins.template.MyBundle
+import com.github.lx200916.uploadtopastemeintellij.MyBundle
 
 class MyProjectService(project: Project) {
 
