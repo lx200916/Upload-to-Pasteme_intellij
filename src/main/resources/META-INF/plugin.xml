@@ -1,14 +1,21 @@
 <idea-plugin>
     <id>com.github.lx200916.uploadtopastemeintellij</id>
     <name>Upload-to-Pasteme_intellij</name>
-    <vendor>lx200916</vendor>
+    <vendor email="saltedfish@saltedfish.fun" url="https://saltedfish.fun">lx200916</vendor>
+    <description><![CDATA[
+      PasteMe.cn的IntelliJ插件版本.可以将IntelliJ的大部分输出上传到Pasteme.cn<br>
+      <em>您可能需要开发者秘钥才能使用</em>
+    ]]></description>
+    <idea-version since-build="173.0"/>
+
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.lx200916.uploadtopastemeintellij.services.MyApplicationService"/>
+        <applicationService
+                serviceImplementation="com.github.lx200916.uploadtopastemeintellij.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.lx200916.uploadtopastemeintellij.services.MyProjectService"/>
     </extensions>
 
@@ -16,4 +23,24 @@
         <listener class="com.github.lx200916.uploadtopastemeintellij.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="Pasteme.newPublicPaste" class="com.github.lx200916.uploadtopastemeintellij.publicpaste.NewPaste"
+                text="Create Public Paste" description="Create a Paste on Pasteme with no password.">
+
+        </action>
+        <action id="Pasteme.newPrivatePaste" class="com.github.lx200916.uploadtopastemeintellij.privatepaste.NewPaste"
+                text="Create Private Paste" description="Create a Paste on Pasteme with password.">
+
+        </action>
+        <group id="Pasteme.MainMenu" popup="true" text="Create Paste" description="Create a Paste on Pasteme "
+               icon="/icon/duck.svg">
+            <reference ref="Pasteme.newPrivatePaste"/>
+            <reference ref="Pasteme.newPublicPaste"/>
+
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="Github.Create.Gist"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu"/>
+            <add-to-group group-id="EditorTabPopupMenu"/>
+        </group>
+    </actions>
 </idea-plugin>
