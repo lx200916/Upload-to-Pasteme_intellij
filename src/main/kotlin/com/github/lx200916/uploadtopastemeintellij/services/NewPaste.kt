@@ -108,6 +108,10 @@ private fun createPaste(e: AnActionEvent, private: Boolean, content: String, lan
                                         }
                                         else -> {
 
+                                                EventQueue.invokeLater {
+                                                    Messages.showMessageDialog("Oops..Check Your Content or Your Token..", "Network Error", Messages.getErrorIcon())
+
+                                            }
                                         }
 
                                     }
@@ -122,7 +126,7 @@ private fun createPaste(e: AnActionEvent, private: Boolean, content: String, lan
 
                     } else {
                         dispose()
-                        PasteMeAPI.createPaste(pasteContent, pasteLang, "") { id ->
+                        PasteMeAPI.createPaste(pasteContent, pasteLang, pastePass) { id ->
                             run {
                                 createNoti(id, e)
                             }
@@ -176,6 +180,10 @@ private fun createPaste(e: AnActionEvent, private: Boolean, content: String, lan
                                             }
                                         }
                                         else -> {
+
+                                                EventQueue.invokeLater { //
+                                                    Messages.showMessageDialog("Oops..Check Your Content or Your Token..", "Network Error", Messages.getErrorIcon())
+                                                }
 
                                         }
 

@@ -31,6 +31,7 @@ public class PrivatePasteDialog extends JDialog {
         setSize(600, 600);
         setPasteContent(pasteContent);
         setPasteLang(pasteLang);
+        System.out.println(PastePass.getEchoChar());
         lang = pasteLang;
         PasteID.setText("You can specify PasteID only in a Burn After Read Paste.");
         addWindowListener(new WindowAdapter() {
@@ -80,6 +81,32 @@ public class PrivatePasteDialog extends JDialog {
 
 
             }
+        });
+        button3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+//                super.mousePressed(e);
+                PastePass.setEchoChar((char)0);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+//                super.mouseReleased(e);
+                PastePass.setEchoChar('•');
+
+            }
+
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+////                super.mouseClicked(e);
+//                System.out.println(PastePass.getEchoChar());
+//                if(PastePass.getEchoChar()=='*'){
+//                    PastePass.setEchoChar((char)0);
+//                }else {
+//                    PastePass.setEchoChar('*');
+//
+//                }
+//            }
         });
     }
 

@@ -45,7 +45,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <enabled value="false"/>
+            </properties>
           </component>
           <component id="588ed" class="javax.swing.JLabel" binding="languageLabel">
             <constraints>
@@ -86,7 +88,9 @@
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <enabled value="true"/>
+                </properties>
               </component>
               <component id="ac674" class="javax.swing.JButton" binding="button3" default-binding="true">
                 <constraints>
