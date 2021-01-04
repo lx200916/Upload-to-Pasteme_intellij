@@ -38,7 +38,9 @@ PasteMe.cn的IntelliJ插件版本.可以将IntelliJ的大部分输出上传到Pa
 
 ![image-20210104185415898](https://tva1.sinaimg.cn/large/0081Kckwly1gmbv0lrd38j30dq0flq4v.jpg)
 
+![image-20210104192120651](https://tva1.sinaimg.cn/large/0081Kckwly1gmbvsqjr8jj30js0js42a.jpg)
 
+![image-20210104192142982](https://tva1.sinaimg.cn/large/0081Kckwly1gmbvt45uohj30ci05174n.jpg)
 
 ## Installation
 
