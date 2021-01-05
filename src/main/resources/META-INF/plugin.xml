@@ -6,23 +6,22 @@
       PasteMe.cn的IntelliJ插件版本.可以将IntelliJ的大部分输出上传到Pasteme.cn<br>
       <em>您可能需要开发者秘钥才能使用</em>
     ]]></description>
-    <idea-version since-build="173.0"/>
+    <idea-version since-build="201.6668.113"/>
 
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService
-                serviceImplementation="com.github.lx200916.uploadtopastemeintellij.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.lx200916.uploadtopastemeintellij.services.MyProjectService"/>
+            serviceImplementation="PasteMeSettings"/>
+        <applicationConfigurable instance="Setting" displayName="Upload to PasteMe" parentId="tools"/>
+
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.lx200916.uploadtopastemeintellij.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+
     <actions>
         <action id="Pasteme.newPublicPaste" class="com.github.lx200916.uploadtopastemeintellij.publicpaste.NewPaste"
                 text="Create Public Paste" description="Create a Paste on Pasteme with no password.">

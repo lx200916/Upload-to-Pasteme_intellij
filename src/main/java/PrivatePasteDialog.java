@@ -1,5 +1,6 @@
 import com.github.lx200916.uploadtopastemeintellij.listeners.OnPrivateDialogListener;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.ui.components.fields.ExtendableTextField;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -24,11 +25,14 @@ public class PrivatePasteDialog extends JDialog {
     private JPanel contentPanel;
     private JCheckBox burnAfterRead;
 
-    public PrivatePasteDialog(String pasteLang, final String pasteContent, final OnPrivateDialogListener listener) {
+    public PrivatePasteDialog(String pasteLang, final String pasteContent, String password,final OnPrivateDialogListener listener) {
         setContentPane(contentPanel);
         setModal(true);
         setTitle("Create Private Paste");
+
+
         setSize(600, 600);
+        PastePass.setText(password);
         setPasteContent(pasteContent);
         setPasteLang(pasteLang);
         System.out.println(PastePass.getEchoChar());
@@ -37,6 +41,7 @@ public class PrivatePasteDialog extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 listener.onCancelClicked(PrivatePasteDialog.this);
+
             }
         });
 

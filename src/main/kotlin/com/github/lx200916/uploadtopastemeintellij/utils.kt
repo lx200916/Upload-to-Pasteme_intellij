@@ -19,6 +19,5 @@ fun Project.getParentWindow(): Window? {
             window = focusedWindow
         }
     }
-
     return window
 }
