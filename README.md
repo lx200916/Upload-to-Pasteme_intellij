@@ -5,7 +5,7 @@ PasteMe.cn的IntelliJ插件版本.可以将IntelliJ的大部分输出上传到Pa
 
 ## Why This
 
-* 从`Intellij` 的`Project`视图\`Editor`视图\甚至`Compiler Output`中直接上传文件内容\错误信息(或选定部分),而无需离开IDE
+* 从`Intellij` 的`Project`视图\ `Editor`视图\甚至`Compiler Output`中直接上传文件内容\错误信息(或选定部分),而无需离开IDE
 * 与`Intellij`协调的UI设计与内建通知
 * 借助`Intellij PSI FILE`API获取更准确的语言信息以供高亮及上传前自动格式化代码
 * 设置Private Paste的默认密码
